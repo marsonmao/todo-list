@@ -4,6 +4,8 @@ import uuid from "uuid/v4";
 export const ADD_TODO = "ADD_TODO";
 export const DELETE_TODO = "DELETE_TODO";
 export const CHECK_TODO = "CHECK_TODO";
+export const CLEAR_LOCAL_STORAGE = "CLEAR_LOCAL_STORAGE";
+export const SET_LOADING = 'SET_LOADING';
 
 export const addTodo = payload => ({
   type: ADD_TODO,
@@ -20,19 +22,28 @@ export const checkTodo = id => ({
   id
 });
 
+export const clearLocalStorage = () => ({
+  type: CLEAR_LOCAL_STORAGE,
+});
+
+export const setLoading = (isLoading) => ({
+  type: SET_LOADING,
+  isLoading,
+});
+
 function todos(state = {}, action) {
   switch (action.type) {
     case ADD_TODO: {
       const newId = uuid();
-      const { title = "Title", description = "Description" } = action.payload;
+      const { id, title = "Title", description = "Description", created_at, checked } = action.payload;
       return {
         ...state,
         [newId]: {
-          id: newId,
+          id: id || newId,
           title,
           description,
-          checked: false,
-          created_at: Date.now()
+          checked: checked || false,
+          created_at: created_at || Date.now()
         }
       };
     }
@@ -55,6 +66,22 @@ function todos(state = {}, action) {
   }
 }
 
+function global(state = {
+  isLoading: true,
+}, action) {
+  switch (action.type) {
+    case SET_LOADING: {
+      return {
+        ...state,
+        isLoading: action.isLoading,
+      };
+    }
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
+  global,
   todos
 });

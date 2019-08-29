@@ -8,6 +8,10 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import MoreVert from "@material-ui/icons/MoreVert";
+import IconButton from "@material-ui/core/IconButton";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import Todo from "components/Todo";
 import AddTodo from "containers/AddTodo";
 import * as selectors from "containers/App/selectors";
@@ -50,7 +54,8 @@ const styles = theme => ({
 
 class TodoList extends React.Component {
   state = {
-    hideChecked: false
+    hideChecked: false,
+    anchorEl: null,
   };
 
   checkTodo = id => {
@@ -63,6 +68,14 @@ class TodoList extends React.Component {
 
   toggleCheckedVisibility = () => {
     this.setState({ hideChecked: !this.state.hideChecked });
+  };
+
+  openMenu = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  closeMenu = () => {
+    this.setState({ anchorEl: null });
   };
 
   renderHeader = () => {
@@ -83,6 +96,9 @@ class TodoList extends React.Component {
           }
           label="Hide checked"
         />
+        <IconButton onClick={this.openMenu}>
+          <MoreVert fontSize="small" />
+        </IconButton>
       </div>
     );
   };
@@ -129,6 +145,19 @@ class TodoList extends React.Component {
     return <List className={classes.list}>{items}</List>;
   };
 
+  renderMenu = () => {
+    const { clearLocalStorage } = this.props;
+    const { anchorEl } = this.state;
+    // NOTE destructive but not implementing confirm window since this is just a demo
+    return (
+      <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={this.closeMenu}>
+        <MenuItem key="clearLocalStorage" onClick={clearLocalStorage}>
+          Clear Local Storage
+        </MenuItem>
+      </Menu>
+    );
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -136,6 +165,7 @@ class TodoList extends React.Component {
         {this.renderHeader()}
         {this.renderList()}
         <AddTodo classes={{ root: classes.fabButton }} />
+        {this.renderMenu()}
       </div>
     );
   }
@@ -147,7 +177,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   checkTodo: id => dispatch(actions.checkTodo(id)),
-  deleteTodo: id => dispatch(actions.deleteTodo(id))
+  deleteTodo: id => dispatch(actions.deleteTodo(id)),
+  clearLocalStorage: () => dispatch(actions.clearLocalStorage()),
 });
 
 TodoList.propTypes = {

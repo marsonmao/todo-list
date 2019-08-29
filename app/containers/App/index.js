@@ -8,11 +8,14 @@
  */
 
 import React from 'react';
+import { connect } from "react-redux";
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
+import Loading from "components/Loading";
 import TodoList from "containers/TodoList";
 import GlobalStyle from '../../global-styles';
+import * as selectors from "./selectors";
 
 const styles = theme => ({
   '@global': {},
@@ -29,16 +32,23 @@ const styles = theme => ({
 });
 
 function App(props) {
-  const { classes } = props;
+  const { classes, isLoading } = props;
   return (
     <div className={classes.paper}>
       <GlobalStyle />
       <CssBaseline />
       <Paper square className={classes.paper}>
-        <TodoList classes={{ root: classes.todoList }} />
+        {isLoading && <Loading />}
+        {!isLoading && <TodoList classes={{ root: classes.todoList }} />}
       </Paper>
     </div>
   );
 }
 
-export default withStyles(styles)(App);
+const mapStateToProps = state => ({
+  isLoading: selectors.selectIsLoading(state),
+});
+
+export default connect(
+  mapStateToProps,
+)(withStyles(styles)(App));

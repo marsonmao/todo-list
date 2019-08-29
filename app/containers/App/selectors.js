@@ -9,5 +9,6 @@ const makeSelectLocation = () =>
   );
 
 export const selectTodos = state => state.app.todos;
+export const selectIsLoading = state => state.app.global.isLoading;
 
 export { makeSelectLocation };
