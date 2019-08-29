@@ -29,6 +29,7 @@ import 'file-loader?name=.htaccess!./.htaccess';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 import configureStore from './configureStore';
+import saga from './sagas';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
@@ -36,6 +37,7 @@ import { translationMessages } from './i18n';
 // Create redux store with history
 const initialState = {};
 const store = configureStore(initialState, history);
+store.runSaga(saga);
 const MOUNT_NODE = document.getElementById('app');
 
 const render = messages => {
