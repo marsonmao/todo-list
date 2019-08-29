@@ -8,21 +8,37 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-
-import HomePage from 'containers/HomePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
-
+import { withStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Paper from '@material-ui/core/Paper';
 import GlobalStyle from '../../global-styles';
 
-export default function App() {
+const styles = theme => ({
+  '@global': {},
+  paper: {
+    width: '100%',
+    height: '100%',
+  },
+  todoList: {
+    width: '70%',
+    height: '100%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+});
+
+function App(props) {
+  const { classes } = props;
   return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
+    <div className={classes.paper}>
       <GlobalStyle />
+      <CssBaseline />
+      <Paper square className={classes.paper}>
+        {/* <TodoList classes={{ root: classes.todoList }} /> */}
+        <div>heyhey</div>
+      </Paper>
     </div>
   );
 }
+
+export default withStyles(styles)(App);
