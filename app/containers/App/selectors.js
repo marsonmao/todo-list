@@ -8,4 +8,6 @@ const makeSelectLocation = () =>
     routerState => routerState.location,
   );
 
+export const selectTodos = state => state.app.todos;
+
 export { makeSelectLocation };

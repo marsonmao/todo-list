@@ -11,6 +11,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
+import TodoList from "containers/TodoList";
 import GlobalStyle from '../../global-styles';
 
 const styles = theme => ({
@@ -34,8 +35,7 @@ function App(props) {
       <GlobalStyle />
       <CssBaseline />
       <Paper square className={classes.paper}>
-        {/* <TodoList classes={{ root: classes.todoList }} /> */}
-        <div>heyhey</div>
+        <TodoList classes={{ root: classes.todoList }} />
       </Paper>
     </div>
   );
