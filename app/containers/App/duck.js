@@ -1,32 +1,32 @@
-import { combineReducers } from "redux";
-import uuid from "uuid/v4";
+import { combineReducers } from 'redux';
+import uuid from 'uuid/v4';
 
-export const ADD_TODO = "ADD_TODO";
-export const DELETE_TODO = "DELETE_TODO";
-export const CHECK_TODO = "CHECK_TODO";
-export const CLEAR_LOCAL_STORAGE = "CLEAR_LOCAL_STORAGE";
+export const ADD_TODO = 'ADD_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
+export const CHECK_TODO = 'CHECK_TODO';
+export const CLEAR_LOCAL_STORAGE = 'CLEAR_LOCAL_STORAGE';
 export const SET_LOADING = 'SET_LOADING';
 
 export const addTodo = payload => ({
   type: ADD_TODO,
-  payload
+  payload,
 });
 
 export const deleteTodo = id => ({
   type: DELETE_TODO,
-  id
+  id,
 });
 
 export const checkTodo = id => ({
   type: CHECK_TODO,
-  id
+  id,
 });
 
 export const clearLocalStorage = () => ({
   type: CLEAR_LOCAL_STORAGE,
 });
 
-export const setLoading = (isLoading) => ({
+export const setLoading = isLoading => ({
   type: SET_LOADING,
   isLoading,
 });
@@ -35,7 +35,13 @@ function todos(state = {}, action) {
   switch (action.type) {
     case ADD_TODO: {
       const newId = uuid();
-      const { id, title = "Title", description = "Description", created_at, checked } = action.payload;
+      const {
+        id,
+        title = 'Title',
+        description = 'Description',
+        created_at,
+        checked,
+      } = action.payload;
       return {
         ...state,
         [newId]: {
@@ -43,8 +49,8 @@ function todos(state = {}, action) {
           title,
           description,
           checked: checked || false,
-          created_at: created_at || Date.now()
-        }
+          created_at: created_at || Date.now(),
+        },
       };
     }
     case DELETE_TODO: {
@@ -57,8 +63,8 @@ function todos(state = {}, action) {
         ...others,
         [action.id]: {
           ...toCheck,
-          checked: true
-        }
+          checked: true,
+        },
       };
     }
     default:
@@ -66,9 +72,12 @@ function todos(state = {}, action) {
   }
 }
 
-function global(state = {
-  isLoading: true,
-}, action) {
+function global(
+  state = {
+    isLoading: true,
+  },
+  action,
+) {
   switch (action.type) {
     case SET_LOADING: {
       return {
@@ -83,5 +92,5 @@ function global(state = {
 
 export default combineReducers({
   global,
-  todos
+  todos,
 });

@@ -1,36 +1,36 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { withStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import MoreVert from "@material-ui/icons/MoreVert";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import grey from "@material-ui/core/colors/grey";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import MoreVert from '@material-ui/icons/MoreVert';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import grey from '@material-ui/core/colors/grey';
 
 const styles = theme => ({
   root: {},
   more: {
-    marginLeft: "auto"
+    marginLeft: 'auto',
   },
   checked: {
-    backgroundColor: grey[300]
-  }
+    backgroundColor: grey[300],
+  },
 });
 
 class Todo extends React.PureComponent {
   state = {
     anchorEl: null,
-    confirmWindowOpen: false
+    confirmWindowOpen: false,
   };
 
   openMenu = event => {
@@ -96,7 +96,7 @@ class Todo extends React.PureComponent {
     if (!title)
       return (
         <Typography
-          style={{ fontStyle: "italic" }}
+          style={{ fontStyle: 'italic' }}
           gutterBottom
           variant="h5"
           component="h2"
@@ -115,7 +115,7 @@ class Todo extends React.PureComponent {
     const { description } = this.props;
     if (!description)
       return (
-        <Typography style={{ fontStyle: "italic" }} component="pre">
+        <Typography style={{ fontStyle: 'italic' }} component="pre">
           Empty
         </Typography>
       );
@@ -127,7 +127,7 @@ class Todo extends React.PureComponent {
     return (
       <Card
         className={classNames(classes.root, {
-          [classes.checked]: checked
+          [classes.checked]: checked,
         })}
         id={id}
       >
@@ -156,7 +156,7 @@ class Todo extends React.PureComponent {
 }
 
 Todo.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
   // title
   // description
   // onEdit

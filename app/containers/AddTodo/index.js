@@ -1,20 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { withStyles } from "@material-ui/core/styles";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
-import Dialog from "@material-ui/core/Dialog";
-import * as actions from "containers/App/duck";
-import AddTodoDialog from "./AddTodoDialog";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import Dialog from '@material-ui/core/Dialog';
+import * as actions from 'containers/App/duck';
+import AddTodoDialog from './AddTodoDialog';
 
 const styles = theme => ({
-  root: {}
+  root: {},
 });
 
 class AddTodo extends React.PureComponent {
   state = {
-    dialogOpen: false
+    dialogOpen: false,
   };
 
   addTodo = payload => {
@@ -47,14 +47,14 @@ class AddTodo extends React.PureComponent {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addTodo: payload => dispatch(actions.addTodo(payload))
+  addTodo: payload => dispatch(actions.addTodo(payload)),
 });
 
 AddTodo.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default connect(
   null,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(withStyles(styles)(AddTodo));

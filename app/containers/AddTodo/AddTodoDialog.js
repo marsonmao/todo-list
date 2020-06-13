@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {},
@@ -13,19 +13,19 @@ const styles = theme => ({
     // weird
     paddingLeft: 24,
     paddingRight: 24,
-    paddingBottom: 16
-  }
+    paddingBottom: 16,
+  },
 });
 
 class AddTodoDialog extends React.PureComponent {
   state = {
-    title: "",
-    description: ""
+    title: '',
+    description: '',
   };
 
   handleTextChange = key => e => {
     this.setState({
-      [key]: e.target.value
+      [key]: e.target.value,
     });
   };
 
@@ -33,7 +33,7 @@ class AddTodoDialog extends React.PureComponent {
     const { title, description } = this.state;
     this.props.onAdd({
       title,
-      description
+      description,
     });
   };
 
@@ -50,7 +50,7 @@ class AddTodoDialog extends React.PureComponent {
             label="Title"
             fullWidth
             value={title}
-            onChange={this.handleTextChange("title")}
+            onChange={this.handleTextChange('title')}
           />
           <TextField
             variant="filled"
@@ -61,7 +61,7 @@ class AddTodoDialog extends React.PureComponent {
             rows={4}
             rowsMax={4}
             value={description}
-            onChange={this.handleTextChange("description")}
+            onChange={this.handleTextChange('description')}
           />
         </DialogContent>
         <DialogActions className={classes.actions}>
@@ -78,7 +78,7 @@ class AddTodoDialog extends React.PureComponent {
 }
 
 AddTodoDialog.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(AddTodoDialog);

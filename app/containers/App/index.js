@@ -8,14 +8,14 @@
  */
 
 import React from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
-import Loading from "components/Loading";
-import TodoList from "containers/TodoList";
+import Loading from 'components/Loading';
+import TodoList from 'containers/TodoList';
 import GlobalStyle from '../../global-styles';
-import * as selectors from "./selectors";
+import * as selectors from './selectors';
 
 const styles = theme => ({
   '@global': {},
@@ -49,6 +49,4 @@ const mapStateToProps = state => ({
   isLoading: selectors.selectIsLoading(state),
 });
 
-export default connect(
-  mapStateToProps,
-)(withStyles(styles)(App));
+export default connect(mapStateToProps)(withStyles(styles)(App));

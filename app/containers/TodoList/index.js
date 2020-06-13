@@ -1,55 +1,55 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { connect } from "react-redux";
-import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import MoreVert from "@material-ui/icons/MoreVert";
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import Todo from "components/Todo";
-import AddTodo from "containers/AddTodo";
-import * as selectors from "containers/App/selectors";
-import * as actions from "containers/App/duck";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { connect } from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import MoreVert from '@material-ui/icons/MoreVert';
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Todo from 'components/Todo';
+import AddTodo from 'containers/AddTodo';
+import * as selectors from 'containers/App/selectors';
+import * as actions from 'containers/App/duck';
 
 const styles = theme => ({
   root: {
-    display: "flex",
-    flexDirection: "column"
+    display: 'flex',
+    flexDirection: 'column',
   },
   todo: {
-    width: "100%"
+    width: '100%',
   },
   spacing: {
     paddingTop: theme.spacing(2),
     paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
+    paddingRight: theme.spacing(2),
   },
   header: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "flex-end"
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-end',
   },
   list: {
-    height: "100%",
-    overflowX: "hidden",
-    overflowY: "auto",
-    marginBottom: theme.spacing(2)
+    height: '100%',
+    overflowX: 'hidden',
+    overflowY: 'auto',
+    marginBottom: theme.spacing(2),
   },
   fabButton: {
-    position: "absolute",
+    position: 'absolute',
     zIndex: 1000,
     bottom: theme.spacing(4),
-    right: theme.spacing(4)
+    right: theme.spacing(4),
   },
   checkBox: {
-    marginLeft: "auto"
-  }
+    marginLeft: 'auto',
+  },
 });
 
 class TodoList extends React.Component {
@@ -172,7 +172,7 @@ class TodoList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  todos: selectors.selectTodos(state)
+  todos: selectors.selectTodos(state),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -182,10 +182,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 TodoList.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(withStyles(styles)(TodoList));
