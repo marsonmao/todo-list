@@ -10,7 +10,7 @@ const styles = theme => ({
 
 class AddTodo extends React.PureComponent {
   render() {
-    const { className, addTodo } = this.props;
+    const { classes, className, addTodo } = this.props;
     return (
       <Button
         className={className}

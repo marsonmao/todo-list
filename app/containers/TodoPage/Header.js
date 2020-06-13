@@ -20,6 +20,7 @@ class TodoListHeader extends React.PureComponent {
 
   render() {
     const {
+      classes,
       className,
       clearLocalStorage,
     } = this.props;
@@ -43,14 +44,14 @@ TodoListHeader.propTypes = {
   clearLocalStorage: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-});
+// const mapStateToProps = state => ({
+// });
 
 const mapDispatchToProps = dispatch => ({
   clearLocalStorage: () => dispatch(actions.clearLocalStorage()),
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps,
 )(withStyles(styles)(TodoListHeader));

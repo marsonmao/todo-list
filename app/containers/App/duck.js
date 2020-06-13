@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { combineReducers } from 'redux';
 import uuid from 'uuid/v4';
 
@@ -54,7 +55,7 @@ function todos(state = {}, action) {
       };
     }
     case DELETE_TODO: {
-      const { [action.id]: toDelete, ...others } = state;
+      const { [action.id]: toDelete_, ...others } = state;
       return others;
     }
     case CHECK_TODO: {

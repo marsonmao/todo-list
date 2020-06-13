@@ -17,11 +17,11 @@ const languageGenerator = require('./language/index.js');
  */
 const BACKUPFILE_EXTENSION = 'rbgen';
 
-module.exports = plop => {
+module.exports = (plop) => {
   plop.setGenerator('component', componentGenerator);
   plop.setGenerator('container', containerGenerator);
   plop.setGenerator('language', languageGenerator);
-  plop.addHelper('directory', comp => {
+  plop.addHelper('directory', (comp) => {
     try {
       fs.accessSync(
         path.join(__dirname, `../../app/containers/${comp}`),

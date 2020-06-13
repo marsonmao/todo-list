@@ -1,4 +1,14 @@
-import { all, call, put, takeEvery, select, delay } from 'redux-saga/effects';
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-plusplus */
+/* eslint-disable camelcase */
+import {
+  all,
+  call,
+  put,
+  takeEvery,
+  select,
+  delay,
+} from 'redux-saga/effects';
 import * as selectors from './selectors';
 import * as actions from './duck';
 
@@ -13,7 +23,13 @@ export function* init() {
     if (items.length === 0) return;
     items = items.sort((a, b) => b.created_at - a.created_at);
     for (let i = 0; i < items.length; ++i) {
-      const { id, title, description, checked, created_at } = items[i];
+      const {
+        id,
+        title,
+        description,
+        checked,
+        created_at,
+      } = items[i];
       yield put(
         actions.addTodo({
           id,

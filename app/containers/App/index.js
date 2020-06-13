@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -44,6 +45,11 @@ function App(props) {
     </div>
   );
 }
+
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = state => ({
   isLoading: selectors.selectIsLoading(state),
