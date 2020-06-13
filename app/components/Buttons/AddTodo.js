@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import classnames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Dialog from '@material-ui/core/Dialog';
-import * as actions from 'containers/App/duck';
-import AddTodoDialog from './AddTodoDialog';
+import AddTodoDialog from 'components/Dialogs/AddTodo';
 
 const styles = theme => ({
   root: {},
 });
 
-class AddTodo extends React.PureComponent {
+class AddTodoButton extends React.PureComponent {
   state = {
     dialogOpen: false,
   };
 
-  addTodo = payload => {
+  addTodo = (payload) => {
     this.props.addTodo(payload);
     this.setState({ dialogOpen: false });
   };
@@ -31,11 +30,11 @@ class AddTodo extends React.PureComponent {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, className } = this.props;
     const { dialogOpen } = this.state;
     return (
       <React.Fragment>
-        <Fab color="primary" className={classes.root}>
+        <Fab color="primary" className={classnames(classes.root, className)}>
           <AddIcon onClick={this.openDialog} />
         </Fab>
         <Dialog open={dialogOpen} onClose={this.closeDialog}>
@@ -46,15 +45,10 @@ class AddTodo extends React.PureComponent {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addTodo: payload => dispatch(actions.addTodo(payload)),
-});
-
-AddTodo.propTypes = {
+AddTodoButton.propTypes = {
   classes: PropTypes.object.isRequired,
+  className: PropTypes.string,
+  addTodo: PropTypes.func.isRequired,
 };
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(withStyles(styles)(AddTodo));
+export default withStyles(styles)(AddTodoButton);

@@ -36,7 +36,7 @@ function* trySaveToLocalStorage(action) {
 
 export function* watchSaveToLocalStorage() {
   yield takeEvery(
-    [actions.ADD_TODO, actions.CHECK_TODO],
+    [actions.ADD_TODO, actions.CHECK_TODO, actions.DELETE_TODO],
     trySaveToLocalStorage,
   );
 }

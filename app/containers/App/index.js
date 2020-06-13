@@ -13,7 +13,7 @@ import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import Loading from 'components/Loading';
-import TodoList from 'containers/TodoList';
+import TodoPage from 'containers/TodoPage';
 import GlobalStyle from '../../global-styles';
 import * as selectors from './selectors';
 
@@ -39,7 +39,7 @@ function App(props) {
       <CssBaseline />
       <Paper square className={classes.paper}>
         {isLoading && <Loading />}
-        {!isLoading && <TodoList classes={{ root: classes.todoList }} />}
+        {!isLoading && <TodoPage className={classes.todoList} />}
       </Paper>
     </div>
   );

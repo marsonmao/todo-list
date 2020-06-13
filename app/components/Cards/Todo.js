@@ -25,6 +25,9 @@ const styles = theme => ({
   checked: {
     backgroundColor: grey[300],
   },
+  textItalic: {
+    fontStyle: 'italic',
+  },
 });
 
 class Todo extends React.PureComponent {
@@ -33,7 +36,7 @@ class Todo extends React.PureComponent {
     confirmWindowOpen: false,
   };
 
-  openMenu = event => {
+  openMenu = (event) => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
@@ -92,11 +95,11 @@ class Todo extends React.PureComponent {
   };
 
   renderTitle = () => {
-    const { title } = this.props;
-    if (!title)
+    const { classes, title } = this.props;
+    if (!title) {
       return (
         <Typography
-          style={{ fontStyle: 'italic' }}
+          className={classes.textItalic}
           gutterBottom
           variant="h5"
           component="h2"
@@ -104,6 +107,7 @@ class Todo extends React.PureComponent {
           Empty
         </Typography>
       );
+    }
     return (
       <Typography gutterBottom variant="h5" component="h2">
         {title}
@@ -112,13 +116,14 @@ class Todo extends React.PureComponent {
   };
 
   renderDescription = () => {
-    const { description } = this.props;
-    if (!description)
+    const { classes, description } = this.props;
+    if (!description) {
       return (
-        <Typography style={{ fontStyle: 'italic' }} component="pre">
+        <Typography className={classes.textItalic} component="pre">
           Empty
         </Typography>
       );
+    }
     return <Typography component="pre">{description}</Typography>;
   };
 
@@ -157,10 +162,12 @@ class Todo extends React.PureComponent {
 
 Todo.propTypes = {
   classes: PropTypes.object.isRequired,
-  // title
-  // description
-  // onEdit
-  // onDelete
+  id: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  checked: PropTypes.bool.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onDone: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Todo);

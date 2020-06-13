@@ -23,7 +23,7 @@ class AddTodoDialog extends React.PureComponent {
     description: '',
   };
 
-  handleTextChange = key => e => {
+  handleTextChange = key => (e) => {
     this.setState({
       [key]: e.target.value,
     });
@@ -79,6 +79,8 @@ class AddTodoDialog extends React.PureComponent {
 
 AddTodoDialog.propTypes = {
   classes: PropTypes.object.isRequired,
+  onAdd: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(AddTodoDialog);
