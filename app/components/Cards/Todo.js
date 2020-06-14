@@ -128,13 +128,23 @@ class Todo extends React.PureComponent {
   };
 
   render() {
-    const { classes, id, checked } = this.props;
+    const {
+      classes,
+      id,
+      checked,
+      title: title_,
+      description: description_,
+      onDelete: onDelete_,
+      onDone: onDone_,
+      ...others
+    } = this.props;
     return (
       <Card
         className={classNames(classes.root, {
           [classes.checked]: checked,
         })}
         id={id}
+        {...others}
       >
         <CardContent>
           {this.renderTitle()}

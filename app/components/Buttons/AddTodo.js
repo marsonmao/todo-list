@@ -30,11 +30,16 @@ class AddTodoButton extends React.PureComponent {
   };
 
   render() {
-    const { classes, className } = this.props;
+    const {
+      classes,
+      className,
+      addTodo: addTodo_,
+      ...others
+    } = this.props;
     const { dialogOpen } = this.state;
     return (
       <React.Fragment>
-        <Fab color="primary" className={classnames(classes.root, className)}>
+        <Fab color="primary" className={classnames(classes.root, className)} {...others}>
           <AddIcon onClick={this.openDialog} />
         </Fab>
         <Dialog open={dialogOpen} onClose={this.closeDialog}>
