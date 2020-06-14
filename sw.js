@@ -1,43 +1,43 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/favicon.ico",
-      "/runtime.d90320853b2c54162662.js",
-      "/"
+      "favicon.ico",
+      "runtime.d90320853b2c54162662.js",
+      ""
     ],
     "additional": [
-      "/npm.intl.bd8f19d9c7d9ab22c1c5.chunk.js",
-      "/main.3d97519278560839d6f3.chunk.js",
-      "/npm.babel.b1d06938cd464715a48a.chunk.js",
-      "/npm.connected-react-router.1982f00a8c9996b39191.chunk.js",
-      "/npm.intl-messageformat.b9b2724ec143c8eb83cb.chunk.js",
-      "/npm.jss.543678298014e26cf1dc.chunk.js",
-      "/npm.material-ui.8066aed3ab70fe49b47f.chunk.js",
-      "/npm.react-app-polyfill.c823b5fdbbb49517598b.chunk.js",
-      "/npm.react-redux.0959552992926f6827ac.chunk.js",
-      "/npm.react-transition-group.c11ef32b21389e105e9d.chunk.js",
-      "/npm.redux-saga.62e1ccde254928896dcb.chunk.js",
-      "/12.e85530c1149c86b5e89e.chunk.js"
+      "npm.intl.bd8f19d9c7d9ab22c1c5.chunk.js",
+      "main.3d97519278560839d6f3.chunk.js",
+      "npm.babel.b1d06938cd464715a48a.chunk.js",
+      "npm.connected-react-router.1982f00a8c9996b39191.chunk.js",
+      "npm.intl-messageformat.b9b2724ec143c8eb83cb.chunk.js",
+      "npm.jss.543678298014e26cf1dc.chunk.js",
+      "npm.material-ui.8066aed3ab70fe49b47f.chunk.js",
+      "npm.react-app-polyfill.c823b5fdbbb49517598b.chunk.js",
+      "npm.react-redux.0959552992926f6827ac.chunk.js",
+      "npm.react-transition-group.c11ef32b21389e105e9d.chunk.js",
+      "npm.redux-saga.62e1ccde254928896dcb.chunk.js",
+      "12.e85530c1149c86b5e89e.chunk.js"
     ],
     "optional": []
   },
   "externals": [],
   "hashesMap": {
-    "5e53ef208f3fa79a48f8374488f473c76e1233de": "/favicon.ico",
-    "1e7fd4463861aeb6a378cf7fb56273f34f47d204": "/npm.intl.bd8f19d9c7d9ab22c1c5.chunk.js",
-    "aba3b7beba1757e4d7dc7d57d707d811fe01b5c5": "/main.3d97519278560839d6f3.chunk.js",
-    "3fc4a17660b905b633feaba67b272424c70349b0": "/npm.babel.b1d06938cd464715a48a.chunk.js",
-    "01a18404d9d8c15a8e2fe1fe984e137663b2812a": "/npm.connected-react-router.1982f00a8c9996b39191.chunk.js",
-    "be07c9247c8f1f35af8682c873fe26275c3929e5": "/npm.intl-messageformat.b9b2724ec143c8eb83cb.chunk.js",
-    "b3bfbf2747cb320894d0bf1adb5ab0f60e7bff30": "/npm.jss.543678298014e26cf1dc.chunk.js",
-    "a3ed2c24040f36afde7280cd3a334dc961653087": "/npm.material-ui.8066aed3ab70fe49b47f.chunk.js",
-    "80c2ab2a9d58be97ff120f67cd3ddee45b508f39": "/npm.react-app-polyfill.c823b5fdbbb49517598b.chunk.js",
-    "a2e9f5a1e15efdff43c6a548643a41968aac772e": "/npm.react-redux.0959552992926f6827ac.chunk.js",
-    "a3a0275d937b4ba6d889b63ab6e3d5df771ced13": "/npm.react-transition-group.c11ef32b21389e105e9d.chunk.js",
-    "df1a6bf4e422d8beb96eea3caeb638da26612305": "/npm.redux-saga.62e1ccde254928896dcb.chunk.js",
-    "e1101f78dd92f1612936caf54f4712ef9f16da21": "/runtime.d90320853b2c54162662.js",
-    "1bf213282292ce0a6ef62f4c9d17b385efcd4e56": "/12.e85530c1149c86b5e89e.chunk.js",
-    "c1d7a2280f304ebf99db9e280af6c50d3e113416": "/"
+    "5e53ef208f3fa79a48f8374488f473c76e1233de": "favicon.ico",
+    "1e7fd4463861aeb6a378cf7fb56273f34f47d204": "npm.intl.bd8f19d9c7d9ab22c1c5.chunk.js",
+    "aba3b7beba1757e4d7dc7d57d707d811fe01b5c5": "main.3d97519278560839d6f3.chunk.js",
+    "3fc4a17660b905b633feaba67b272424c70349b0": "npm.babel.b1d06938cd464715a48a.chunk.js",
+    "01a18404d9d8c15a8e2fe1fe984e137663b2812a": "npm.connected-react-router.1982f00a8c9996b39191.chunk.js",
+    "be07c9247c8f1f35af8682c873fe26275c3929e5": "npm.intl-messageformat.b9b2724ec143c8eb83cb.chunk.js",
+    "b3bfbf2747cb320894d0bf1adb5ab0f60e7bff30": "npm.jss.543678298014e26cf1dc.chunk.js",
+    "a3ed2c24040f36afde7280cd3a334dc961653087": "npm.material-ui.8066aed3ab70fe49b47f.chunk.js",
+    "80c2ab2a9d58be97ff120f67cd3ddee45b508f39": "npm.react-app-polyfill.c823b5fdbbb49517598b.chunk.js",
+    "a2e9f5a1e15efdff43c6a548643a41968aac772e": "npm.react-redux.0959552992926f6827ac.chunk.js",
+    "a3a0275d937b4ba6d889b63ab6e3d5df771ced13": "npm.react-transition-group.c11ef32b21389e105e9d.chunk.js",
+    "df1a6bf4e422d8beb96eea3caeb638da26612305": "npm.redux-saga.62e1ccde254928896dcb.chunk.js",
+    "e1101f78dd92f1612936caf54f4712ef9f16da21": "runtime.d90320853b2c54162662.js",
+    "1bf213282292ce0a6ef62f4c9d17b385efcd4e56": "12.e85530c1149c86b5e89e.chunk.js",
+    "c1d7a2280f304ebf99db9e280af6c50d3e113416": ""
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
@@ -126,7 +126,7 @@ var __wpo = {
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -921,7 +921,7 @@ cacheMaps: [
             return;
           }
 
-          return new URL("/", location);
+          return new URL("", location);
         },
       to: null,
       requestTypes: ["navigate"],
